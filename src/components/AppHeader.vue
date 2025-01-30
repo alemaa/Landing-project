@@ -1,9 +1,9 @@
 <template>
    <header class="header">
       <nav class="menu">
-         <a href="Home">Home</a>
-         <a href="About">About</a>
-         <a href="Contact">Contact</a>
+         <router-link to="/">Home</router-link>
+         <router-link to="/about">About</router-link>
+         <router-link to="/contact">Contact</router-link>
       </nav>
       <div class="title">
          <h1>Landing</h1>
@@ -12,10 +12,12 @@
          <button id="button-primary" @click="buyButton">Buy now</button>
       </div>
    </header>
+
 </template>
 
 <script setup>
 import { defineEmits } from 'vue';
+
 const emit = defineEmits([
   'buyButton'
 ])
@@ -23,6 +25,8 @@ const buyButton=()=>{
   alert("Button clicked! Emitting event...");
   emit('buy-button');
 }
+
+
 </script>
 
 <style>
