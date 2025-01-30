@@ -16,7 +16,7 @@
 
 <script setup>
 import { defineEmits } from 'vue';
-   const emit = defineEmits([
+const emit = defineEmits([
   'buyButton'
 ])
 const buyButton=()=>{

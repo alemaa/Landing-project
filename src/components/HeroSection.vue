@@ -1,5 +1,7 @@
 <template>
 <div class="hero-section">
+    <div class="picture">
+    </div>
     <div class="hero-introduce">
         <div class="hero-introduce-title">
           <h1>{{ title }}</h1>
@@ -18,8 +20,8 @@
 import { defineProps,defineEmits } from 'vue';
 
 defineProps({
-  title: String,
-  description:String
+    title: String,
+    description:String
 })
 const emit = defineEmits([
     'primaryButton',
@@ -35,7 +37,23 @@ const secondaryButton=()=>{
 }
 </script>
 <style>
-
+.hero-section {
+    min-height: 50vh;
+    position: relative;
+}
+body {
+    overflow-x: hidden;
+}
+.picture {
+    background-image: url('/designer_1.png');
+    position: absolute;
+    background-repeat: no-repeat;
+    top:-70%;
+    left:430px;
+    right:-70%;
+    bottom:-40%;
+    z-index:-1;
+}
 .hero-introduce {
     display: flex;
     flex-direction: column;
