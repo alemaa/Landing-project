@@ -8,35 +8,45 @@
           <p>{{ description }}</p>
         </div>
         <div class="hero-buttons">
-        <button id="purchase-button" @click="$emit('primary-button')">Purchase UI Kit</button>
-        <button id="learn-button" @click="$emit('secondary-button')">Learn more</button>
+        <button id="purchase-button" @click="primaryButton">Purchase UI Kit</button>
+        <button id="learn-button" @click="secondaryButton">Learn more</button>
         </div>
     </div>
 </div>
 </template>
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps,defineEmits } from 'vue';
 
 defineProps({
   title: String,
   description:String
 })
-
+const emit = defineEmits([
+    'primaryButton',
+    'secondaryButton'
+])
+const primaryButton=()=>{
+    alert("Button clicked! Emitting event...");
+    emit('primary-button');
+}
+const secondaryButton=()=>{
+    alert("Button clicked! Emitting event...");
+    emit('secondary-button');
+}
 </script>
 <style>
-
 
 .hero-introduce {
     display: flex;
     flex-direction: column;
     margin-top: 20%;
     text-align: start;
+    width: 539.37px;
+    height: 421px;
 }
 .hero-introduce-title {
     color: #091133;
-    width: 539px;
-    height: 132px;
-   
+    font-size: larger;
 }
 .hero-description {
     color: #505F98;
@@ -44,6 +54,7 @@ defineProps({
 .hero-buttons {
     display: flex;
     gap: 20px;
+    margin-top: 40px;
 }
 #purchase-button {
     background-color: #111B47;
