@@ -23,6 +23,14 @@
     </div>
     </template>
     <script setup>
+    import { defineEmits } from 'vue';
+    const emit = defineEmits([
+    'purchaseButton'
+])
+const purchaseButton=()=>{
+    alert("Button clicked! Emitting event...");
+    emit('purchase-button');
+}
 </script>
 <style>
 .pricing-section {

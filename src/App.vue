@@ -10,7 +10,8 @@
  <router-view />
 </main>
 <AppFooter
-title="Landing"/>
+title="Landing"
+@footer-purchase-button="onFooterPurchaseButton"/>
 </div>
 
 </template>
@@ -22,7 +23,9 @@ import { RouterView } from 'vue-router';
 const onBuyButton=() =>{
     console.log('Received from child:', 'data');
 }
-
+const onFooterPurchaseButton=() =>{
+    console.log('Received from child:', 'data');
+}
 </script>
 
 <style>

@@ -8,9 +8,10 @@
                 <h1>{{ title }}</h1>
             </div>
             <div>
-                <button id="footer-purchase-button">Purchase now</button>
+                <button id="footer-purchase-button" @click="clickButton">Purchase now</button>
             </div>
         </div>
+        <hr class="custom-line" />
         <div class="footer-navbar">
             <div class="footer-menu">
                 <router-link to="/">Home</router-link>
@@ -48,15 +49,21 @@
     </div>
     </template>
     <script setup>
-    import { defineProps } from 'vue';
+    import { defineProps,defineEmits } from 'vue';
 defineProps({
     title: String,
 })
+const emit = defineEmits([
+    'footerPurchaseButton'
+])
+const clickButton=()=>{
+    alert("Button clicked! Emitting event...");
+    emit('footer-purchase-button');
+}
 </script>
 <style>
 .footer {
     margin-top: 10%;
-    background-color: #E7ECFF;
 }
 .wrapper {
     display: flex;
@@ -98,5 +105,8 @@ defineProps({
     flex-direction: row;
     justify-content: flex-end;
     gap: 20px;
+}
+.custom-line {
+    color: #CDD1D4;
 }
 </style>

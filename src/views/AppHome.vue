@@ -13,6 +13,9 @@ const onSecondaryButton=() =>{
 const introButton=() =>{
      console.log('Received from child:', 'data');
 }
+const purchaseButton=() =>{
+     console.log('Received from child:', 'data');
+}
 const heroTitle = ref('Introduce Your Product Quickly & Effectively');
 const title=ref('Light, Fast & Powerful');
 const description=ref(`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
@@ -34,5 +37,6 @@ mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla 
 :description="description"
 @intro-button="introButton"
 />
-<PricingSection/>
+<PricingSection
+@purchase-button="purchaseButton"/>
 </template>
