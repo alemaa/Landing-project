@@ -10,7 +10,7 @@
           <p>{{ description }}</p>
         </div>
         <div class="hero-buttons">
-        <button id="purchase-button" @click="primaryButton">Purchase UI Kit</button>
+        <button id="purchase-button" @click="primaryButton">Purchase UI kit</button>
         <button id="learn-button" @click="secondaryButton">Learn more</button>
         </div>
     </div>
@@ -81,6 +81,7 @@ body {
     height: 36px;
     color: white;
     font-weight: bold;
+    text-transform: capitalize;
 }
 #learn-button {
     width: 189px;

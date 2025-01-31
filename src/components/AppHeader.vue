@@ -1,9 +1,9 @@
 <template>
    <header class="header">
       <nav class="menu">
-         <router-link to="/">Home</router-link>
-         <router-link to="/about">About</router-link>
-         <router-link to="/contact">Contact</router-link>
+         <router-link class="Home" to="/">Home</router-link>
+         <router-link class="About" to="/about">About</router-link>
+         <router-link class="Contact" to="/contact">Contact</router-link>
       </nav>
       <div class="title">
          <h1>Landing</h1>
@@ -12,7 +12,6 @@
          <button id="button-primary" @click="buyButton">Buy now</button>
       </div>
    </header>
-
 </template>
 
 <script setup>
@@ -26,7 +25,6 @@ const buyButton=()=>{
   emit('buy-button');
 }
 
-
 </script>
 
 <style>
@@ -38,7 +36,7 @@ const buyButton=()=>{
    display: flex;
    gap:50px;
 }
-.menu a {
+ .menu>a {
    text-decoration: none;
    color: #505F98;
 }
