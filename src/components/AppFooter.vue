@@ -11,7 +11,9 @@
                 <button id="footer-purchase-button" @click="clickButton">Purchase now</button>
             </div>
         </div>
-        <hr class="custom-line" />
+        <div class="custom-line">
+            <hr />
+        </div>
         <div class="footer-navbar">
             <div class="footer-menu">
                 <router-link to="/">Home</router-link>
@@ -46,10 +48,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    </template>
-    <script setup>
-    import { defineProps,defineEmits } from 'vue';
+</div>
+</template>
+<script setup>
+import { defineProps,defineEmits } from 'vue';
 defineProps({
     title: String,
 })
@@ -62,35 +64,55 @@ const clickButton=()=>{
 }
 </script>
 <style>
-.footer {
-    margin-top: 10%;
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    align-content: center;
+    width: 100vh;
+    height: 200px;
+}
+.footer::after {
+    content: "";
+    background-color: #E7ECFF;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom:-10px;
+    right:-50%;
+    top:0;
+    left:-60%;
+    z-index: -1;
 }
 .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .footer-text {
     color: #939EA4;
     font-size: 14px;
-    margin-top: 50px;
 }
 .footer-title {
-    margin-top: 30px;
+    color: #37447E;
+    font-size: small;
 }
 #footer-purchase-button {
-    margin-top: 50px;
     background-color: #111B47;
     border: 1px solid #111B47;
-    width: 189px;
-    height: 36px;
+    width: 109px;
+    height: 26px;
     color: white;
     font-weight: bold;
-    text-transform: capitalize;
+    font-size: 12px;
 }
 .footer-navbar {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 .footer-menu {
     display: flex;

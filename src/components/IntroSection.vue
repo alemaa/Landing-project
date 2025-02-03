@@ -60,11 +60,22 @@ const introButton =()=>{
 <style>
 .intro-section {
     min-height: 50vh;
+    display: flex;
+    flex-direction: column;
 }
 .intro-text-block, .intro-text-block-copy, .intro-text-block-with-button {
     display: flex;
     justify-content: space-between;
     margin-top: 20%;
+}
+.intro-text, .intro-text-copy,  .intro-text-with-button {
+    text-align: start;
+    margin-left: 15%;
+    width: 445px;
+    height: 228px;
+}
+.intro-description , .intro-description-copy, .intro-description-with-button{
+    color: #6F7CB2;
 }
 .intro-background {
     flex-basis: 50%;
@@ -73,15 +84,6 @@ const introButton =()=>{
     background-size: auto;
     position: relative;
     height: 315px;
-}
-.intro-text, .intro-text-copy, .intro-text-with-button {
-    text-align: start;
-    margin-left: 15%;
-    width: 445px;
-    height: 228px;
-}
-.intro-description , .intro-description-copy, .intro-description-with-button{
-    color: #6F7CB2;
 }
 .intro-background-copy{
     background-image: url('/undraw_social_influencer_sgsv.png');
@@ -97,7 +99,7 @@ const introButton =()=>{
     background-image: url('/undraw_mention_6k5d.png');
     flex-basis: 50%;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     position: relative;
     height: 315px;
 }

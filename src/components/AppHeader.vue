@@ -24,13 +24,13 @@ const buyButton=()=>{
   alert("Button clicked! Emitting event...");
   emit('buy-button');
 }
-
 </script>
 
 <style>
 .header {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 .menu {
    display: flex;

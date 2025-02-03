@@ -35,18 +35,16 @@ const purchaseButton=()=>{
 <style>
 .pricing-section {
     display: flex;
-    min-height: 50vh;
-    margin-top: 20%;
+    align-items: center;
     background-image: url('/Rectangle.png');
     position: relative;
     background-size: cover;
-    width: 2546.93px;
+    width: 2546px;
     height: 938px;
     margin-left: -40%;
-    margin-bottom: -10%;
+    margin-bottom:-10px;
 }
 .text-block {
-    margin-top: 10%;
     margin-left: 24%;
 }
 .pricing-description {
