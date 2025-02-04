@@ -1,32 +1,42 @@
 <template>
    <header class="header">
-   <nav class="menu">
-    <a href="Home">Home</a>
-    <a href="About">About</a>
-    <a href="Contact">Contact</a>
-   </nav>
-   <div class="title">
-    <h1>Landing</h1>
-   </div>
-   <div class="buy-button">
-    <button id="button-primary">Buy now</button>
-   </div>
+      <nav class="menu">
+         <router-link class="Home" to="/">Home</router-link>
+         <router-link class="About" to="/about">About</router-link>
+         <router-link class="Contact" to="/contact">Contact</router-link>
+      </nav>
+      <div class="title">
+         <h1>Landing</h1>
+      </div>
+      <div class="buy-button">
+         <button id="button-primary" @click="buyButton">Buy now</button>
+      </div>
    </header>
 </template>
 
 <script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits([
+  'buyButton'
+])
+const buyButton=()=>{
+  alert("Button clicked! Emitting event...");
+  emit('buy-button');
+}
 </script>
 
 <style>
 .header {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 .menu {
    display: flex;
    gap:50px;
 }
-.menu a {
+ .menu>a {
    text-decoration: none;
    color: #505F98;
 }
@@ -44,7 +54,5 @@
    font-weight: bold;
    text-transform: capitalize;
 }
-
-
 
 </style>

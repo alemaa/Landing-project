@@ -1,41 +1,42 @@
 <template>
-  <div class="container">
-<AppHeader/>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+  <div  class="container">
+    <AppHeader
+@buy-button="onBuyButton"
+/>
 <main>
-<HeroSection title="Introduce Your Product Quickly & Effectively"
-description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
-mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."/>
-<AboutSection/>
-<IntroSection/>
-<PricingSection/>
+ <router-view />
 </main>
-<AppFooter/>
+<AppFooter
+title="Landing"
+@footer-purchase-button="onFooterPurchaseButton"/>
 </div>
 </template>
 
 <script setup>
-import AboutSection from './components/AboutSection.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
-import HeroSection from './components/HeroSection.vue';
-import IntroSection from './components/IntroSection.vue';
-import PricingSection from './components/PricingSection.vue';
-
-
+import { RouterView } from 'vue-router';
+const onBuyButton=() =>{
+    console.log('Received from child:', 'data');
+}
+const onFooterPurchaseButton=() =>{
+    console.log('Received from child:', 'data');
+}
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+font-family: 'Roboto';
+text-align: center;
 }
 .container {
-  max-width: 1050px;
-    padding: 0 20px;
-    margin: -25px auto;
+max-width: 1050px;
+padding: 0 20px;
+margin: 0 auto;
 }
 </style>
