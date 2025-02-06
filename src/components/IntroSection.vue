@@ -3,22 +3,27 @@
     <div class="intro-text-block">
         <div class="intro-background">
         </div>
+
         <div class="intro-text">
-            <div class="intro-title">
-                <h1>{{ title }}</h1>
-            </div>
+                <h1 class="intro-title">
+                    {{ title }}
+                </h1>
+
             <div class="intro-description">
                 <p>{{ description }}</p>
             </div>
         </div>
     </div>
+
     <div class="intro-text-block-copy">
         <div class="intro-background-copy">
         </div>
+
         <div class="intro-text-copy">
-            <div class="intro-title-copy">
-                <h1>{{ title }}</h1>
-            </div>
+                <h1 class="intro-title-copy">
+                    {{ title }}
+                </h1>
+
             <div class="intro-description-copy">
                 <p>{{ description }}</p>
             </div>
@@ -27,83 +32,88 @@
     <div class="intro-text-block-with-button">
         <div class="intro-background-with-button">
         </div>
+
         <div class="intro-text-with-button">
-            <div class="intro-title-with-button">
-                <h1>{{ title }}</h1>
-            </div>
+                <h1 class="intro-title-with-button">
+                    {{ title }}
+                </h1>
+
             <div class="intro-description-with-button">
                 <p>{{ description }}</p>
             </div>
+
             <div class="intro-button">
-                <button id="intro-button-primary" @click="introButton">Purchase now</button>
+                <button class="intro-button-primary" @click="intro">Purchase now</button>
             </div>
         </div>
     </div>
 </div>
 </template>
-    <script setup>
 
+<script setup>
 import { defineProps , defineEmits } from 'vue';
 
 defineProps({
     title: String,
     description:String
 })
+
 const emit=defineEmits([
-    'introButton'
+    'intro'
 ])
-const introButton =()=>{
+
+const intro =()=>{
     alert("Button clicked");
-    emit('intro-button')
+    emit('intro')
 }
 </script>
+
 <style>
 .intro-section {
     min-height: 50vh;
     display: flex;
     flex-direction: column;
 }
+
 .intro-text-block, .intro-text-block-copy, .intro-text-block-with-button {
     display: flex;
     justify-content: space-between;
     margin-top: 20%;
 }
-.intro-text, .intro-text-copy,  .intro-text-with-button {
-    text-align: start;
-    margin-left: 15%;
-    width: 445px;
+
+.intro-text-block {
+    flex-direction: column;
+}
+
+.intro-text, .intro-text-copy, .intro-text-with-button {
+    text-align: center;
     height: 228px;
 }
+
 .intro-description , .intro-description-copy, .intro-description-with-button{
     color: #6F7CB2;
 }
+
 .intro-background {
-    flex-basis: 50%;
-    background-image: url('/undraw.png');
+    background-image: url('/public/images/undraw.png');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     position: relative;
     height: 315px;
+    width: 300px;
+    align-self: center;
+    width: 50%;
 }
-.intro-background-copy{
-    background-image: url('/undraw_social_influencer_sgsv.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 387px;
-    width: 540px;
-    margin-right:-15%;
-    margin-left:-5%;
+
+.intro-background-copy {
+    display: none;
 }
+
 .intro-background-with-button {
-    background-image: url('/undraw_mention_6k5d.png');
-    flex-basis: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 315px;
+    display: none;
 }
-#intro-button-primary {
+
+.intro-button-primary {
     background-color: #111B47;
     border: 1px solid #111B47;
     width: 150px;
@@ -112,5 +122,41 @@ const introButton =()=>{
     font-weight: bold;
     margin-top: 30px;
     text-transform: capitalize;
+}
+
+@media(min-width:480px) {
+    .intro-text, .intro-text-copy,.intro-text-with-button {
+        text-align: start;
+        margin-left: 10%;
+    }
+
+    .intro-background-copy {
+        display: block;
+        background-image: url('/public/images/undraw_social_influencer_sgsv.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 387px;
+        width: 540px;
+        margin-right:-15%;
+    }
+
+    .intro-background-with-button {
+        display: block;
+        background-image: url('/public/images/undraw_mention_6k5d.png');
+        flex-basis: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 315px;
+    }
+
+    .intro-text-block {
+        flex-direction: row;
+    }
+
+    .intro-text,.intro-text-copy,.intro-text-with-button {
+        width: 445px;
+    }
 }
 </style>
