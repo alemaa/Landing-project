@@ -1,9 +1,9 @@
 <template>
-<section class="about-us">
-    <div class="about-us__wrapper">
-        <h1>
-            {{title}}
-        </h1>
+    <section class="about-us">
+        <div class="about-us__wrapper">
+            <h1>
+                {{title}}
+            </h1>
 
         <div class="about-us-description">
             {{ description }}
@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -43,7 +43,6 @@ defineProps ({
     flex-direction: column;
     min-height: 50vh;
     position: relative;
-
 }
 
 .about-us__wrapper{

@@ -54,12 +54,12 @@ defineProps ({
 })
 
 const emit = defineEmits ([
-    'footerPurchaseButton'
+    'purchase'
 ])
 
 const purchase =() => {
     alert("Button clicked! Emitting event...");
-    emit('purchase-button');
+    emit('purchase');
 }
 </script>
 

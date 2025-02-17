@@ -31,12 +31,12 @@ import { defineEmits } from 'vue';
 import {ref } from 'vue';
 
 const emit = defineEmits([
-   'buyButton',
+   'buy',
 ])
 
 const buy =() => {
    alert("Button clicked! Emitting event...");
-   emit('buy-button');
+   emit('buy');
 }
 
 const isMenuOpen = ref(false);

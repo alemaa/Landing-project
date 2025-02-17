@@ -1,20 +1,20 @@
 <template>
-<div class="hero-section">
-    <div class="hero-introduce">
-        <h1 class="hero-introduce-title">
-            {{ title }}
-        </h1>
+    <div class="hero-content">
+        <div class="hero-content__wrapper">
+            <h1 class="hero-content__title">
+                {{ title }}
+            </h1>
 
-        <div class="hero-description">
-          <p>{{ description }}</p>
+        <div class="hero-content__description">
+            <p>{{ description }}</p>
         </div>
 
-        <div class="hero-buttons">
-        <button class="purchase-button" @click="purchase">Purchase UI kit</button>
-        <button class="learn-button" @click="learn">Learn more</button>
+        <div class="hero-content__buttons">
+            <button class="purchase-button" @click="purchase">Purchase UI kit</button>
+            <button class="learn-button" @click="learn">Learn more</button>
+        </div>
         </div>
     </div>
-</div>
 </template>
 
 <script setup>
@@ -42,7 +42,7 @@ const learn=()=>{
 </script>
 
 <style>
-.hero-section {
+.hero-content {
     min-height: 50vh;
     display: flex;
 }
@@ -51,7 +51,7 @@ body {
     overflow-x: hidden;
 }
 
-.hero-introduce {
+.hero-content__wrapper {
     display: flex;
     flex-direction: column;
     margin-top: 20%;
@@ -59,7 +59,7 @@ body {
     flex-basis: 50%;
 }
 
-.hero-introduce-title {
+.hero-content__title {
     color: #091133;
 }
 
@@ -67,7 +67,7 @@ body {
     color: #505F98;
 }
 
-.hero-buttons {
+.hero-content__buttons {
     display: flex;
     gap: 20px;
     margin-top: 40px;
@@ -94,11 +94,11 @@ body {
 }
 
 @media (min-width:480px) {
-    .hero-introduce {
+    .hero-content__wrapper {
         text-align: start;
     }
 
-    .hero-section::after {
+    .hero-content::after {
         content: "";
         background-image: url('/public/images/designer_1.png');
         position: absolute;

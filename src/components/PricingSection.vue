@@ -32,7 +32,7 @@
 import { defineEmits } from 'vue';
 
 const emit = defineEmits([
-    'purchaseButton'
+    'purchase'
 ])
 
 const purchase =() => {
@@ -79,9 +79,6 @@ const purchase =() => {
 }
 
 @media(min-width:480px){
-    .text-block {
-
-    }
     .pricing-section::after {
         content: "";
         background-image: url('/public/images/Rectangle.png');

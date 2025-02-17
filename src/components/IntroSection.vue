@@ -1,10 +1,10 @@
 <template>
-<div class="intro-section">
-    <div class="intro-text-block">
-        <div class="intro-background">
+<div class="intro-content">
+    <div class="intro-content__wrapper">
+        <div class="intro-content__background">
         </div>
 
-        <div class="intro-text">
+        <div class="intro-content__container">
                 <h1 class="intro-title">
                     {{ title }}
                 </h1>
@@ -69,23 +69,23 @@ const intro =()=>{
 </script>
 
 <style>
-.intro-section {
+.intro-content {
     min-height: 50vh;
     display: flex;
     flex-direction: column;
 }
 
-.intro-text-block, .intro-text-block-copy, .intro-text-block-with-button {
+.intro-content__wrapper, .intro-text-block-copy, .intro-text-block-with-button {
     display: flex;
     justify-content: space-between;
     margin-top: 20%;
 }
 
-.intro-text-block {
+.intro-content__wrapper {
     flex-direction: column;
 }
 
-.intro-text, .intro-text-copy, .intro-text-with-button {
+.intro-content__container, .intro-text-copy, .intro-text-with-button {
     text-align: center;
     height: 228px;
 }
@@ -94,7 +94,7 @@ const intro =()=>{
     color: #6F7CB2;
 }
 
-.intro-background {
+.intro-content__background {
     background-image: url('/public/images/undraw.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -125,7 +125,7 @@ const intro =()=>{
 }
 
 @media(min-width:480px) {
-    .intro-text, .intro-text-copy,.intro-text-with-button {
+    .intro-content__container, .intro-text-copy, .intro-text-with-button {
         text-align: start;
         margin-left: 10%;
     }
@@ -151,11 +151,11 @@ const intro =()=>{
         height: 315px;
     }
 
-    .intro-text-block {
+    .intro-content__wrapper {
         flex-direction: row;
     }
 
-    .intro-text,.intro-text-copy,.intro-text-with-button {
+    .intro-content__container, .intro-text-copy, .intro-text-with-button {
         width: 445px;
     }
 }
