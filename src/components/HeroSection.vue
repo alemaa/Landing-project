@@ -8,12 +8,12 @@
         <div class="hero-content__description">
             <p>{{ description }}</p>
         </div>
-
         <div class="hero-content__buttons">
             <button class="purchase-button" @click="purchase">Purchase UI kit</button>
             <button class="learn-button" @click="learn">Learn more</button>
         </div>
         </div>
+        <img class="hero-image" src="/images/designer_1.png" alt="image designer">
     </div>
 </template>
 
@@ -43,12 +43,17 @@ const learn=()=>{
 
 <style>
 .hero-content {
-    min-height: 50vh;
     display: flex;
 }
 
 body {
     overflow-x: hidden;
+}
+
+.hero-image {
+    position: relative;
+    top:-100px;
+    z-index: -1;
 }
 
 .hero-content__wrapper {
@@ -93,22 +98,9 @@ body {
     text-transform: capitalize;
 }
 
-@media (min-width:480px) {
+@media (min-width:640px) {
     .hero-content__wrapper {
         text-align: start;
-    }
-
-    .hero-content::after {
-        content: "";
-        background-image: url('/public/images/designer_1.png');
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 100%;
-        height: 100%;
-        margin-top: -75px;
-        margin-left: 30%;
-        z-index:-1;
     }
 }
 

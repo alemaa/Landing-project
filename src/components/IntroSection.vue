@@ -124,7 +124,7 @@ const intro =()=>{
     text-transform: capitalize;
 }
 
-@media(min-width:480px) {
+@media(min-width:640px) {
     .intro-content__container, .intro-text-copy, .intro-text-with-button {
         text-align: start;
         margin-left: 10%;

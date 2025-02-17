@@ -78,7 +78,7 @@ const purchase =() => {
     font-size: 36px;
 }
 
-@media(min-width:480px){
+@media(min-width:640px){
     .pricing-section::after {
         content: "";
         background-image: url('/public/images/Rectangle.png');

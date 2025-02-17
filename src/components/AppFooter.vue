@@ -69,6 +69,7 @@ const purchase =() => {
     flex-direction: column;
     justify-content: space-around;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .footer::after {
@@ -141,10 +142,11 @@ const purchase =() => {
     color: #CDD1D4;
 }
 
-@media(min-width:480px) {
+@media(min-width:640px) {
     .footer {
-        height: 200px;
-        width: 100vh;
+      padding: 20px;
+      
+   
     }
 
     .footer-title {

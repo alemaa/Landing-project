@@ -19,6 +19,7 @@
          <router-link class="Home" to="/">Home</router-link>
          <router-link class="About" to="/about">About</router-link>
          <router-link class="Contact" to="/contact">Contact</router-link>
+         <button class="button-mobile" @click="buy">Buy now</button>
       </nav>
       <div class="buy-button">
          <button class="button-primary" @click="buy">Buy now</button>
@@ -69,6 +70,21 @@ const isMenuOpen = ref(false);
 }
 
 .button-primary {
+   display: none;
+}
+
+.button-mobile {
+   background-color: #111B47;
+   border: 1px solid #111B47;
+   width: 160px;
+   height: 26px;
+   color: white;
+   font-weight: bold;
+   text-transform: capitalize;
+   margin-top: 30px;
+}
+
+.button-primary {
    background-color: #111B47;
    border: 1px solid #111B47;
    width: 160px;
@@ -91,6 +107,7 @@ const isMenuOpen = ref(false);
    margin-bottom: 35px;
    color: rgb(92, 90, 90);
    gap: 30px;
+   align-items: center;
 }
 
 .menu-mobile>a {
@@ -98,12 +115,12 @@ const isMenuOpen = ref(false);
    color: #505F98;
 }
 
-@media (min-width:480px) {
+@media (min-width:640px) {
    .header {
-      display: flex;
       justify-content: space-between;
       margin-top: 30px;
       flex-direction: row;
+      flex-wrap: wrap;
    }
 
    .menu-mobile {
@@ -125,6 +142,7 @@ const isMenuOpen = ref(false);
    }
 
    .button-primary {
+      display: block;
       margin-top: 0;
    }
 }

@@ -81,7 +81,8 @@ defineProps ({
     font-size: 12px;
 }
 
-@media(min-width:480px) {
+
+@media(min-width:640px) {
     .about-us {
         flex-direction: row;
         margin-top: 20%;
@@ -95,8 +96,8 @@ defineProps ({
         background-size: cover;
         width: 50%;
         height: 50%;
-        margin-left: 60%;
-        margin-top: 30%;
+        left:60%;
+        top:50%;
     }
 
     .about-us-title {
