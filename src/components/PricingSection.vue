@@ -54,10 +54,6 @@ const purchase = () => {
   margin-top: 10%;
 }
 
-.text-block {
-  margin-top: -40%;
-}
-
 .pricing-description {
   color: #6f7cb2;
 }
@@ -86,10 +82,6 @@ const purchase = () => {
 }
 
 @media (min-width: 640px) {
-  .pricing-section {
-    margin-top: -20%;
-  }
-
   .pricing-section::after {
     content: "";
     background-image: url("/public/images/Rectangle.png");
@@ -97,7 +89,6 @@ const purchase = () => {
     background-size: cover;
     width: 100%;
     height: 100%;
-    margin-bottom: -20%;
     z-index: -1;
   }
 

@@ -1,11 +1,10 @@
 <template>
-  <section ref="hero-el" class="hero-content">
-    {{width}} {{height}}
+  <section ref="hero-el" class="hero-content"  :style="{ '--container-width': `${width}px` }">
     <div class="hero-content__wrapper">
       <h1 class="hero-content__title">
         {{ title }}
       </h1>
-      <p>{{ description }}</p>
+      <p class="hero-content__description">{{ description }}</p>
       <div class="hero-content__buttons">
         <button class="purchase-button" @click="purchase">
           Purchase UI kit
@@ -20,16 +19,16 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits,useTemplateRef } from "vue";
 import { useElementSize } from '@vueuse/core';
-import { useTemplateRef } from 'vue';
+
 defineProps({
   title: String,
   description: String,
 });
 
-const element = useTemplateRef('hero-el')
-const { width, height } = useElementSize(element)
+const element =useTemplateRef('hero-el')
+const { width }  = useElementSize(element)
 
 const emit = defineEmits(["purchase", "learn"]);
 
@@ -45,40 +44,28 @@ const learn = () => {
 </script>
 
 <style>
-:root{
-  --test: test;
-}
-.container {
-    max-width: 1050px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
 .hero-content {
   position: relative;
   display: flex;
   min-height: 100vh;
-  align-items: center;
 }
 
 .hero-image {
   position: absolute;
-  top: 0;
-  right: calc((100vw- var(--test))/(-2));
-  /* right: calc((100vw - 1050px)/ (-2)); */
+  top: -80px;
+  right: calc((100vw - var(--container-width)) / (-2)); 
   z-index: -1;
   height: 100%;
+  max-width: none;
 }
-.container {
-    max-width: 1050px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
+
 .hero-background {
   flex-basis: 50%;
 }
 
 .hero-content__wrapper {
   flex-basis: 50%;
+  text-align: start;
 }
 
 .hero-content__title {
@@ -126,12 +113,7 @@ const learn = () => {
   .hero-content__buttons {
     justify-content: start;
   }
-
-  .hero-content__wrapper {
-    flex-direction: column;
-    text-align: start;
-  }
-
+  
   .hero-content__title {
     font-size: 50px;
     font-weight: 500;
