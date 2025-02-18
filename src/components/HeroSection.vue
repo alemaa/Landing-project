@@ -1,107 +1,140 @@
 <template>
-    <div class="hero-content">
-        <div class="hero-content__wrapper">
-            <h1 class="hero-content__title">
-                {{ title }}
-            </h1>
-
-        <div class="hero-content__description">
-            <p>{{ description }}</p>
-        </div>
-        <div class="hero-content__buttons">
-            <button class="purchase-button" @click="purchase">Purchase UI kit</button>
-            <button class="learn-button" @click="learn">Learn more</button>
-        </div>
-        </div>
-        <img class="hero-image" src="/images/designer_1.png" alt="image designer">
+  <section ref="hero-el" class="hero-content">
+    {{width}} {{height}}
+    <div class="hero-content__wrapper">
+      <h1 class="hero-content__title">
+        {{ title }}
+      </h1>
+      <p>{{ description }}</p>
+      <div class="hero-content__buttons">
+        <button class="purchase-button" @click="purchase">
+          Purchase UI kit
+        </button>
+        <button class="learn-button" @click="learn">Learn more</button>
+      </div>
     </div>
+    <div class="hero-background">
+      <img class="hero-image" src="/images/designer_1.png" alt="image designer" />
+    </div>
+  </section>
 </template>
 
 <script setup>
-import { defineProps,defineEmits } from 'vue';
-
+import { defineProps, defineEmits } from "vue";
+import { useElementSize } from '@vueuse/core';
+import { useTemplateRef } from 'vue';
 defineProps({
-    title: String,
-    description:String
-})
+  title: String,
+  description: String,
+});
 
-const emit = defineEmits([
-    'purchase',
-    'learn'
-])
+const element = useTemplateRef('hero-el')
+const { width, height } = useElementSize(element)
 
-const purchase=()=>{
-    alert("Button clicked! Emitting event...");
-    emit('purchase');
-}
+const emit = defineEmits(["purchase", "learn"]);
 
-const learn=()=>{
-    alert("Button clicked! Emitting event...");
-    emit('learn');
-}
+const purchase = () => {
+  alert("Button clicked! Emitting event...");
+  emit("purchase");
+};
+
+const learn = () => {
+  alert("Button clicked! Emitting event...");
+  emit("learn");
+};
 </script>
 
 <style>
-.hero-content {
-    display: flex;
+:root{
+  --test: test;
 }
-
-body {
-    overflow-x: hidden;
+.container {
+    max-width: 1050px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.hero-content {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .hero-image {
-    position: relative;
-    top:-100px;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  right: calc((100vw- var(--test))/(-2));
+  /* right: calc((100vw - 1050px)/ (-2)); */
+  z-index: -1;
+  height: 100%;
+}
+.container {
+    max-width: 1050px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.hero-background {
+  flex-basis: 50%;
 }
 
 .hero-content__wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20%;
-    text-align: center;
-    flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .hero-content__title {
-    color: #091133;
+  color: #091133;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 66px;
+  letter-spacing: 1px;
 }
 
-.hero-description {
-    color: #505F98;
+.hero-content__description {
+  color: #505f98;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
 }
 
 .hero-content__buttons {
-    display: flex;
-    gap: 20px;
-    margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  min-width: 300px;
+  justify-content: center;
 }
 
 .purchase-button {
-    background-color: #111B47;
-    border: 1px solid #111B47;
-    width: 189px;
-    height: 36px;
-    color: white;
-    font-weight: bold;
-    text-transform: capitalize;
+  background-color: #111b47;
+  border: 1px solid #111b47;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px 20px 10px 20px;
 }
 
 .learn-button {
-    width: 189px;
-    height: 36px;
-    color: black;
-    background: transparent;
-    border: 2px solid black;
-    font-weight: bold;
-    text-transform: capitalize;
+  color: black;
+  background: transparent;
+  border: 2px solid black;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px 20px 10px 20px;
 }
 
-@media (min-width:640px) {
-    .hero-content__wrapper {
-        text-align: start;
-    }
-}
+@media (min-width: 640px) {
+  .hero-content__buttons {
+    justify-content: start;
+  }
 
+  .hero-content__wrapper {
+    flex-direction: column;
+    text-align: start;
+  }
+
+  .hero-content__title {
+    font-size: 50px;
+    font-weight: 500;
+  }
+}
 </style>

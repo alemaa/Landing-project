@@ -1,119 +1,116 @@
 <template>
-    <section class="about-us">
-        <div class="about-us__wrapper">
-            <h1>
-                {{title}}
-            </h1>
+  <section class="about-us">
+    <div class="about-us__wrapper">
+      <h1>
+        {{ title }}
+      </h1>
 
-        <div class="about-us-description">
-            {{ description }}
-        </div>
+      <div class="about-us-description">
+        {{ description }}
+      </div>
 
-        <div class="card-container">
-            <div  v-for="(card, index) in cards" :key="`card-${index}`">
-                <div class="info-card">
-                    <img src="/images/icon.svg" alt="info icon" />
-                    <h2 class="card-title">
-                        {{card.cardTitle}}
-                    </h2>
+      <div class="card-container">
+        <div v-for="(card, index) in cards" :key="`card-${index}`">
+          <div class="info-card">
+            <img src="/images/icon.svg" alt="info icon" />
+            <h2 class="card-title">
+              {{ card.cardTitle }}
+            </h2>
 
-                    <div class="card-description">
-                        <p>{{ card.cardDescription }}</p>
-                    </div>
-                </div>
+            <div class="card-description">
+              <p>{{ card.cardDescription }}</p>
             </div>
+          </div>
         </div>
-        </div>
-    </section>
+      </div>
+    </div>
+    <img
+      class="about-image"
+      src="/images/undraw_mobile_login_ikmv.png"
+      alt="about picture"
+    />
+  </section>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
 
-defineProps ({
-    title: String,
-    description:String,
-    cards:Array,
-})
+defineProps({
+  title: String,
+  description: String,
+  cards: Array,
+});
 </script>
 
 <style>
 .about-us {
-    display: flex;
-    flex-direction: column;
-    min-height: 50vh;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-top: -20%;
 }
 
-.about-us__wrapper{
-    margin-top: 30%;
+.about-image {
+  flex-basis: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  align-self: center;
+  max-width: 80vw;
 }
 
-.about-us__wrapper h1{
-    text-align: center;
+.about-us__wrapper h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  color: #091133;
 }
 
 .about-us-description {
-    color: #6F7CB2;
-    text-align: center;
-    color: #6F7CB2;
-}
-
-.block-elements {
-    margin-top: 20%;
+  color: #6f7cb2;
+  text-align: center;
+  color: #6f7cb2;
 }
 
 .card-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 60px;
+  display: flex;
+  gap: 20px;
+  text-align: start;
+  margin-top: 40px;
+}
+
+.card-description {
+  color: #5d6970;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .about-us {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .about-us__wrapper {
+    margin-top: 0;
+  }
+
+  .about-image {
+    align-self: flex-end;
+  }
+
+  .about-us__wrapper h1 {
     text-align: start;
+  }
+
+  .about-us-description {
+    text-align: start;
+  }
+
+  .card-container {
+    flex-direction: row;
+  }
 }
-
-.info-card {
-    width: 255px;
-    height: 140px;
-}
-
-.card-description{
-    color: #5D6970;
-    font-size: 12px;
-}
-
-
-@media(min-width:640px) {
-    .about-us {
-        flex-direction: row;
-        margin-top: 20%;
-    }
-
-    .about-us::after {
-        content:"";
-        background-image: url('/public/images/undraw.png');
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 50%;
-        height: 50%;
-        left:60%;
-        top:50%;
-    }
-
-    .about-us-title {
-        text-align: start;
-    }
-
-    .about-us-description {
-        width: 540px;
-        height: 204px;
-        text-align: start;
-    }
-
-    .card-container {
-        margin-top: 0;
-        flex-direction: row;
-    }
-}
-
 </style>
