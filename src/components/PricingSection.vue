@@ -1,7 +1,7 @@
 <template>
   <section class="pricing-section">
-    <div class="text-block-title">
-      <p class="section-title">A Price To Suit Everyone</p>
+    <div class="pricing-text__block">
+      <p class="pricing-title">A Price To Suit Everyone</p>
       <p class="pricing-description">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula <br />
@@ -39,7 +39,17 @@ const purchase = () => {
   flex-direction: column;
 }
 
-.section-title {
+.pricing-section::after {
+  content: "";
+  background-image: url("/public/images/Rectangle.png");
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.pricing-title {
   color: #091133;
   font-weight: 500;
   font-size: 36px;
@@ -78,21 +88,9 @@ const purchase = () => {
   font-weight: 400;
 }
 
-.text-block-title {
+.pricing-text__block {
   color: #091133;
   font-weight: 500;
   font-size: 36px;
-}
-
-@media (min-width: 640px) {
-  .pricing-section::after {
-     content: "";
-    background-image: url("/public/images/Rectangle.png");
-    position: absolute;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
 }
 </style>

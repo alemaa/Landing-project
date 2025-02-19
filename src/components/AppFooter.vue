@@ -65,7 +65,6 @@ const purchase = () => {
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   position: relative;
   flex-wrap: wrap;
   margin-top: -30%;

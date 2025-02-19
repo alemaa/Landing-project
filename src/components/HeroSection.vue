@@ -64,7 +64,6 @@ const learn = () => {
   right: calc((100vw - var(--container-width)) / (-2));
   z-index: -1;
   height: 100%;
-  max-width: none;
 }
 
 .hero-background {
@@ -72,7 +71,6 @@ const learn = () => {
 }
 
 .hero-content__wrapper {
-  flex-basis: 50%;
   text-align: start;
   align-content: center;
 }
@@ -96,7 +94,6 @@ const learn = () => {
   display: flex;
   gap: 20px;
   margin-top: 40px;
-  min-width: 300px;
   justify-content: center;
 }
 
@@ -106,7 +103,7 @@ const learn = () => {
   color: white;
   font-weight: bold;
   text-transform: capitalize;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 40px 10px 40px;
 }
 
 .learn-button {
@@ -115,7 +112,7 @@ const learn = () => {
   border: 2px solid black;
   font-weight: bold;
   text-transform: capitalize;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 40px 10px 40px;
 }
 
 @media (min-width: 640px) {
@@ -126,6 +123,10 @@ const learn = () => {
   .hero-content__title {
     font-size: 50px;
     font-weight: 500;
+  }
+
+  .hero-content__wrapper {
+    max-width: 60%;
   }
 }
 </style>

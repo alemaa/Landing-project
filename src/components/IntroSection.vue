@@ -57,13 +57,13 @@ const intro = () => {
   display: flex;
   gap: 15%;
   flex-direction: column;
+  align-items: center;
 }
 
 .intro-title {
   font-weight: 500;
   font-size: 36px;
   line-height: 48px;
-  color: #091133;
 }
 
 .intro-content__container {

@@ -5,7 +5,7 @@
         {{ title }}
       </h1>
 
-      <div class="about-us-description">
+      <div class="about-us__description">
         {{ description }}
       </div>
 
@@ -65,7 +65,7 @@ defineProps({
   color: #091133;
 }
 
-.about-us-description {
+.about-us__description {
   color: #6f7cb2;
   text-align: center;
   color: #6f7cb2;
@@ -94,7 +94,7 @@ defineProps({
     text-align: start;
   }
 
-  .about-us-description {
+  .about-us__description {
     text-align: start;
   }
 

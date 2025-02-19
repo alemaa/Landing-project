@@ -17,12 +17,11 @@ const purchase = () => {
   console.log("Received from child:", "data");
 };
 
-const heroTitle = ref("Introduce Your Product Quickly & Effectively");
-const title = ref("Light, Fast & Powerful");
-const description =
-  ref(`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+const heroTitle = "Introduce Your Product Quickly & Effectively";
+const title = "Light, Fast & Powerful";
+const description = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.`);
+mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.`;
 
 const cards = ref([
   {
@@ -62,13 +61,23 @@ const components = ref([
 </script>
 
 <template>
-  <HeroSection :title="heroTitle" :description="description" @learn="learn" />
-  <AboutSection :title="title" :description="description" :cards="cards" />
+  <HeroSection
+    :title="heroTitle"
+    :description="description"
+    @learn="learn"
+  />
+  <AboutSection
+    :title="title"
+    :description="description"
+    :cards="cards"
+  />
   <IntroSection
     :title="title"
     :description="description"
     :components="components"
     @intro="intro"
   />
-  <PricingSection @purchase="purchase" />
+  <PricingSection
+    @purchase="purchase"
+  />
 </template>
