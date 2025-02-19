@@ -25,7 +25,7 @@
       </div>
     </div>
     <img
-      class="about-image"
+      class="about-us__image"
       src="/images/undraw_mobile_login_ikmv.png"
       alt="about picture"
     />
@@ -48,15 +48,13 @@ defineProps({
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  margin-top: -20%;
 }
 
-.about-image {
+.about-us__image {
   flex-basis: 50%;
   object-fit: cover;
-  align-self: center;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .about-us__wrapper h1 {
@@ -87,18 +85,9 @@ defineProps({
   font-weight: 400;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 980px) {
   .about-us {
     flex-direction: row;
-    margin-top: 0;
-  }
-
-  .about-us__wrapper {
-    margin-top: 0;
-  }
-
-  .about-image {
-    align-self: flex-end;
   }
 
   .about-us__wrapper h1 {

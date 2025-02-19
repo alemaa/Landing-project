@@ -30,7 +30,6 @@ const purchase = () => {
 };
 </script>
 
-
 <style>
 .pricing-section {
   display: flex;

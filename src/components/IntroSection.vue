@@ -91,7 +91,7 @@ const intro = () => {
   object-fit: cover;
   flex-basis: 50%;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 @media (min-width: 640px) {

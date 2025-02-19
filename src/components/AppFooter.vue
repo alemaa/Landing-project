@@ -39,7 +39,7 @@
         </div>
 
         <div class="icon-instagram">
-          <img src="images/Instagram.svg" alt="instagram icon" />
+          <img src="images/instagram.svg" alt="instagram icon" />
         </div>
       </div>
     </div>
@@ -108,7 +108,6 @@ const purchase = () => {
   color: white;
   font-weight: bold;
   font-size: 12px;
-  margin-top: 35px;
 }
 
 .footer-navbar {
@@ -154,10 +153,6 @@ const purchase = () => {
 
   .wrapper {
     flex-direction: row;
-  }
-
-  .footer-purchase-button {
-    margin-top: 0;
   }
 
   .footer-menu {

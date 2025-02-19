@@ -74,6 +74,7 @@ const learn = () => {
 .hero-content__wrapper {
   flex-basis: 50%;
   text-align: start;
+  align-content: center;
 }
 
 .hero-content__title {
