@@ -172,6 +172,7 @@ const purchase = () => {
     justify-content: flex-end;
     margin-top: 0;
   }
+
   .custom-line {
     display: block;
     color: #cdd1d4;

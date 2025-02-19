@@ -89,9 +89,9 @@ const intro = () => {
 
 .intro-picture {
   object-fit: cover;
-  aspect-ratio: 1;
   flex-basis: 50%;
-  min-width: 30%;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 640px) {

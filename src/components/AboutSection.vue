@@ -54,9 +54,9 @@ defineProps({
 .about-image {
   flex-basis: 50%;
   object-fit: cover;
-  aspect-ratio: 1;
   align-self: center;
-  max-width: 80vw;
+  width: 100%;
+  height: 100%;
 }
 
 .about-us__wrapper h1 {

@@ -1,5 +1,9 @@
 <template>
-  <section ref="hero-el" class="hero-content"  :style="{ '--container-width': `${width}px` }">
+  <section
+    ref="hero-el"
+    class="hero-content"
+    :style="{ '--container-width': `${width}px` }"
+  >
     <div class="hero-content__wrapper">
       <h1 class="hero-content__title">
         {{ title }}
@@ -13,22 +17,26 @@
       </div>
     </div>
     <div class="hero-background">
-      <img class="hero-image" src="/images/designer_1.png" alt="image designer" />
+      <img
+        class="hero-image"
+        src="/images/designer_1.png"
+        alt="image designer"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import { defineProps, defineEmits,useTemplateRef } from "vue";
-import { useElementSize } from '@vueuse/core';
+import { defineProps, defineEmits, useTemplateRef } from "vue";
+import { useElementSize } from "@vueuse/core";
 
 defineProps({
   title: String,
   description: String,
 });
 
-const element =useTemplateRef('hero-el')
-const { width }  = useElementSize(element)
+const element = useTemplateRef("hero-el");
+const { width } = useElementSize(element);
 
 const emit = defineEmits(["purchase", "learn"]);
 
@@ -53,7 +61,7 @@ const learn = () => {
 .hero-image {
   position: absolute;
   top: -80px;
-  right: calc((100vw - var(--container-width)) / (-2)); 
+  right: calc((100vw - var(--container-width)) / (-2));
   z-index: -1;
   height: 100%;
   max-width: none;
@@ -113,7 +121,7 @@ const learn = () => {
   .hero-content__buttons {
     justify-content: start;
   }
-  
+
   .hero-content__title {
     font-size: 50px;
     font-weight: 500;
